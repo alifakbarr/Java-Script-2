@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <!-- method child tidak bisa dipanggil dari parent child -->
 </body>
 <script>
   // inheritance adalah cara membuat class baru berdasarkan class yang sudah ada / diwariskan
@@ -28,11 +28,18 @@
 }
 // extends untuk mendapatkan warisan dari clas lain atau induk
 class Dog extends Animal{
-
+  getHumanAge(){
+  return this.age*7;
+  }
 }
 const dog = new Dog('Pitbul',2);
 
 // menggunakan method dari class lain
 dog.info();
+
+// Panggil method getHumanAge milik instance dog
+const humanAge = dog.getHumanAge();
+
+console.log(`Saya berusia ${humanAge} dalam umur manusia`);
 </script>
 </html>
