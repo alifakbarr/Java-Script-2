@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const characters=[
+    {name:'Jin',age:20},
+    {name:'Mori'}
+  ];
+
+for(let i=0;i<characters.length;i++){
+
+  const character =characters[i];
+  console.log(`Nama saya ${character.name}`);
+  if(character.age === undefined){
+    console.log('Umur saya rahasia');
+  }else{
+    
+    console.log(`umur saya ${character.age}`);
+  }
+}
+
+</script>
+</html>
