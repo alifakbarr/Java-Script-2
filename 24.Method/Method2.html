@@ -14,10 +14,19 @@
       this.name=name;
       this.age=age;
     }
+
+    sapa(){
+      console.log('hyy');
+    }
     info(){
       console.log(`Nama : ${this.name}`);
       console.log(`Umur : ${this.age}`);
+
+      // memanggil method dalam method
+      this.sapa();
     }
+
+
   }
 
   const animal = new Animals('Kuda',2);
