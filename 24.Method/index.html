@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  // Function didalam class disebut method
+
+  class Animals{
+    constructor(name,age) {
+      this.name=name;
+      this.age=age
+    }
+    greet(){
+      console.log(`Hyy`);
+    }
+  }
+
+  const animal = new Animals('Singa',12);
+  console.log(`Nama:${animal.name}`);
+  console.log(`Age:${animal.age}`);
+
+  animal.greet();
+</script>
+</html>
