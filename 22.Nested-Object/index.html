@@ -14,11 +14,16 @@
     bussinesHours:{
       opening:'10:00',
       closing:'20:00'
-    }
+    },
+    menu:['Kopi','Teh','Susu']
 
   }
 
   console.log(`Cafe ${cafe.name}`);
   console.log(`Buka mulai ${cafe.bussinesHours.opening} sampai ${cafe.bussinesHours.closing}`);
+  for(let i=0;i<cafe.menu.length;i++){
+    const menu=cafe.menu[i];
+    console.log(menu);
+  }
 </script>
 </html>
