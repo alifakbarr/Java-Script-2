@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // inheritance adalah cara membuat class baru berdasarkan class yang sudah ada / diwariskan
+  class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  greet() {
+    console.log("Halo");
+  }
+  
+  info() {
+    this.greet();
+    console.log(`Nama saya adalah ${this.name}`);
+    console.log(`Saya berumur ${this.age} tahun`);
+  }
+}
+// extends untuk mendapatkan warisan dari clas lain atau induk
+class Dog extends Animal{
+
+}
+</script>
+</html>
