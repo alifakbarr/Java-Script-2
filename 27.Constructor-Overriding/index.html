@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  class Animals{
+    constructor(name,age){
+      this.name=name;
+      this.age=age;
+    }
+
+    greet(){
+      console.log(`Halo`);
+    }
+    info(){
+      this.greet();
+      console.log(`Nama saya ${this.name}`);
+      console.log(`Umur saya ${this.age}`);
+    }
+  }
+
+  class Dog extends Animals{
+    constructor(name,age,breed){
+      // super akan memanggil constructor class induk
+      super(name,age);
+      this.breed=breed;
+    }
+
+    info(){
+      this.greet();
+      console.log(`Nama saya ${this.name}`);
+      console.log(`Saya adalah ${this.breed}`);
+      console.log(`Umur saya ${this.age}`);
+      const humanAge = this.getHumanAge();
+      console.log(`Umur saya berusia ${humanAge} tahun dari umur manusia`);
+    }
+
+    getHumanAge(){
+      return this.age *7;
+    }
+  }
+
+  const dog = new Dog('Leo',4,'Chihuahua');
+  dog.info();
+</script>
+</html>
