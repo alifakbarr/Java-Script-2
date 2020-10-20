@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  // Overriding / Timpa
+  // jika method dari class anak sama dengan method class induk maka method class anak yang akan dijalankan
+  // karena method class anak  akan menimpa method class induk maka dari itu disebut Overriding
+
+  class Animals{
+    constructor(name,age) {
+      this.name=name;
+      this.age=age;
+    }
+
+    greet(){
+      console.log(`Halo`);
+    }
+
+    info(){
+      this.greet();
+      console.log(`Nama Saya ${this.name}`);
+      console.log(`Umur Saya ${this.age}`);
+    }
+  }
+
+  class Dog extends Animals{
+    // Method info overriding dengan class info indek/Animals
+    info(){
+      console.log(`Nama Saya ${this.name}`);
+      console.log(`Umur Saya ${this.age}`);
+
+      const humanAge = this.getHumanAge();
+      console.log(`Saya berusia ${humanAge} tahun dalam umur manusia`); 
+    }
+    
+    getHumanAge(){
+      return this.age *7;
+    }
+  }
+
+  const dog = new Dog('Leo',4);
+  dog.info();
+</script>
+</html>
