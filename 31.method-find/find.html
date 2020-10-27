@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>find</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // Method find digunakan untuk mengembalikan nilai PERTAMA dari sebuah array yang sesuai dengan 
+  // condisi expresi.
+
+  // cara 1 menggunakan method find
+  const numbers=[1,3,5,7,9];
+  const findNumber=numbers.find((number)=>{
+    return number % 3===0;
+  });
+
+  console.log(findNumber);
+
+
+  // cara 2 menggunakan method find
+  const characters = [
+    {id:1,name:'Jin'},
+    {id:2,name:'Mori'},
+    {id:3,name:'Zoro'},
+
+  ];
+  const findCharacter = characters.find((character)=>{
+    return character.id ===3;
+  })
+
+  console.log(findCharacter);
+
+</script>
+</html>
