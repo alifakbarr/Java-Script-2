@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+  // callback function dapat menerima argument
+  const introduce = (callback)=>{
+    callback("Zoro",20);
+    // meneruskan 2 argument
+  }
+
+  introduce((name,age)=>{
+    // mendeklarasikan function yang menerima 2 argument
+    console.log(`${name} berumur ${age} tahun`);
+  })
+</script>
+</html>
