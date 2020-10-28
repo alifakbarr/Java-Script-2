@@ -25,7 +25,12 @@
     callback();
   }
 
+  // cara 1 menggunakan callbackfunction (mendefinisikan function)
+  call(printKen);
 
-  call(printMaster);
+  // cara 2 mendeklarasikan function di argumen
+  call(()=>{
+    console.log('Roronoa Zoro');
+  })
 </script>
 </html>
