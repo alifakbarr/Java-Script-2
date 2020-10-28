@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map</title>
+</head>
+<body>
+  
+</body>
+<script>
+  
+  // method map menerapkan semua function yang sama ke setiap nilai didalam array dan 
+  // mereturn hasilnya sebagai array baru
+
+  // contoh map pada number
+  const numbers = [1,2,3,4];
+  const doubleNumbers = numbers.map((number)=>{
+    return number * 2;
+  })
+
+  console.log(doubleNumbers);
+
+  // contoh map pada object
+  const characters = [
+    {firstName:'Jin', lastName:'Mori'},
+    {firstName:'Roronoa', lastName:'Zoro'},
+    {firstName:'Vinsmoke', lastName:'Sanji'}
+  ];
+
+  const fullName = characters.map((character)=>{
+    return character.firstName+" "+character.lastName;
+  })
+
+  console.log(fullName);
+</script>
+</html>
