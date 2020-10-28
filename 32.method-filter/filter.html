@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // method filter digunakan unruk memfilter data sesuai kondisi.
+  // method ini membuat dan mengembalikan array baru dengan semua nilai yang sesuai
+
+  // contoh untuk number
+  const numbers = [1,2,3,4];
+  const evenNumber = numbers.filter((number)=>{
+    return number % 2 ===0;
+  });
+
+  console.log(evenNumber);
+
+  // contoh untuk object
+  const characters = [
+    {nama:'Jin' ,age:14},
+    {nama:'Mori' ,age:19},
+    {nama:'Zoro' ,age:24}
+  ];
+
+  const underTwenty = characters.filter((character)=>{
+    return character.age < 20;
+  })
+
+  console.log(underTwenty);
+</script>
+</html>
