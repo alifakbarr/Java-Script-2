@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Function</title>
+</head>
+<body>
+</body>
+<script>
+  // callback function yaitu function yang diteruskan ke function lain sebagai argumen.
+  // function yamg bisa menjadi argumen yaitu string,boolean,integer
+  // tambahkan () ketika memanggil function
+  // jangan tambahkan () ketika meneruskan callback function
+
+  const printKen = ()=>{
+    console.log('NinjaKen');
+  }
+  const printMaster = ()=>{
+    console.log('Guru Domba');
+  }
+
+  const call = (callback) =>{
+    console.log('Memanggil function callback.');
+    callback();
+  }
+
+
+  call(printMaster);
+</script>
+</html>
