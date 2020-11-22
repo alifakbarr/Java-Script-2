@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+
+ 
+  
+</body>
+<script>
+// perbedaan pembuatan object dan pemanggilan
+
+  // function deklaration
+ function buatObject(nim,nama){
+    var mhs={};
+    mhs.nim=nim;
+    mhs.nama=nama;
+    return mhs;
+  };
+
+var mhs3 = buatObject('202','irdho');
+
+// constructor
+function Mhs(nim,nama){
+  this.nim=nim;
+  this.nama=nama;
+}
+
+var mhs4 = new Mhs('303','rty');
+
+</script>
+</html>
