@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Dasar</title>
+</head>
+<body>
+  <script>
+    // membuat objek literal
+
+    // mhs = object
+    // variable didalam object dinamakan property
+    // function didalam object dinamakan method
+
+    // pemanggilan di console mhs.nama
+    var mhs={
+      nama:"Alif Akbar Irdhobilla",
+      kelas:"5A3",
+      nim:"191080200202",
+      alamat:{
+        jalan:"Jl.Dwi Guna",
+        Desa:"Grabagan",
+      },
+      sapa:function(){
+        return "Hi"+this.nama+ "alamat" +this.alamat.jalan;
+      }
+    }
+  </script>
+</body>
+</html>
