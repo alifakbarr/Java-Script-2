@@ -13,7 +13,7 @@
     // variable didalam object dinamakan property
     // function didalam object dinamakan method
 
-    // pemanggilan di console mhs.nama
+    // membuat objek literal
     var mhs={
       nama:"Alif Akbar Irdhobilla",
       kelas:"5A3",
@@ -26,6 +26,33 @@
         return "Hi"+this.nama+ "alamat" +this.alamat.jalan;
       }
     }
+    // pemanggilan di console mhs.nama
+
+    // membuat objek function declaration
+    function membuatObjekMhs(nama,kelas){
+      var mhs={}
+      mhs.nama=nama;
+      mhs.kelas=kelas;
+      return mhs;
+    }
+    // pemanggilan
+    var mhs4 = membuatObjekMhs('irdho','4A3');
+    // mhs4
+
+    // membuat objek dengan constructor function
+    // gunakan Huruf besar diawal untuk membuat constructor
+    function Mahasiswa(nama,kelas){
+      
+      // var this={}
+      this.nama=nama;
+      this.kelas=kelas;
+      // return this
+    }
+
+    // pemganggilan 
+    // gunakan new
+    var mhs5= new Mahasiswa('irdho','4A3');
+    // mhs5
   </script>
 </body>
 </html>
