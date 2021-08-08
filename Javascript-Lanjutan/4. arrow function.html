@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Function</title>
+</head>
+<body>
+  <script>
+    // function expression
+    // let tampilPesan = function(nama){
+    //   return `Halo ${nama}`;
+    // }
+
+    // console.log(tampilPesan('Bro'));
+
+    // arrow function
+    // let tampilPesan = (nama) => {
+    //   return `Halo ${nama}`;
+    // }
+
+    // console.log(tampilPesan('Sis'));
+
+    // // jika hanya 1 parameter
+    // let tampilPesan = nama => {
+    //   return `Halo ${nama}`;
+    // }
+
+    // console.log(tampilPesan('Sis'));
+
+    // bisa tanpa return
+    // let tampilPesan = nama => `Halo ${nama}`;
+
+    // console.log(tampilPesan('Sis'));
+
+    let mahasiswa = ['irdho','jojo']
+    // membuat object di arrow function
+      let jumlahHuruf = mahasiswa.map(nama =>({nama, jmlhHuruf:nama.length}));
+
+    console.log(jumlahHuruf);
+
+
+    // array
+
+
+    // let jumlahHuruf = mahasiswa.map(nama => nama.length);
+    // console.log(jumlahHuruf);
+  </script>
+</body>
+</html>
