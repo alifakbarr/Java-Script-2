@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object.create()</title>
+</head>
+<body>
+  <script>
+
+    // fungsi object.create sama seperti membuat object mhs={}
+    // dan untuk memanggil object lain
+    const methodMahasiswa={
+      makan: function(porsi){
+        this.energi+=porsi;
+        console.log(`Halo ${this.nama}`)
+      }
+    }
+    // constructor
+    function Mahasiswa(nama,energi){
+      let mhs =Object.create(methodMahasiswa)
+      mhs.nama=nama;
+      mhs.energi=energi;
+      // dengan memanggil object lain menggunakan Object.create() kita tidak perlu memanggil seperti dibawah ini
+      // mhs.makan=methodMahasiswa.makan
+      return mhs;
+    }
+
+    var bro = Mahasiswa('bro',0);
+  </script>
+</body>
+</html>
