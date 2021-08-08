@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure</title>
+</head>
+<body>
+  <!-- closure adalah sebuah function yang sebelumnya sudah memiliki data, hasil function yang lain -->
+
+  <!-- fungsi closure untuk membuat private method -->
+  <script>
+    // cara 1
+    let add = function(){
+      let counter = 0
+      return function(){
+        return ++counter;
+      }
+    }
+
+    // pemanggilan
+    let a = add();
+
+    console.log(a());
+    console.log(a());
+
+
+    // Cara 2
+    // let add = (function(){
+    //   let counter = 0
+    //   return function(){
+    //     return ++counter;
+    //   }
+    // })();
+    
+    // pemanggilan
+    // console.log(add());
+    // console.log(add());
+    // console.log(add());
+    // console.log(add());
+    // console.log(add());
+  </script>
+</body>
+</html>
