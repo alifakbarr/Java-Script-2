@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter, Map & Reduce</title>
+</head>
+<body>
+  <script>
+    const angka=[-1,8,9,1,4,-5,-4,3,2,9];
+
+    // mencari angka lebih besar dari 3
+    // dengan for
+
+    // for (let i = 0; i < angka.length; i++) {
+    //   if (angka[i] >= 3) {
+    //     console.log(angka[i]);
+    //   }
+      
+    // }
+
+    // dengan filter / mensaring
+    // const newAngka = angka.filter(function(a){
+    //   return a >= 3;
+    // })
+
+    // console.log(newAngka);
+
+    // dengan filter + arrow function
+    // a disini sebagai reprentasi tiap tiap element array
+    // const newAngka = angka.filter(a => a >=3);
+    // console.log(newAngka);
+
+    // map / memetakan
+    // kalikan semua angka dengan 2
+    // jadi setiap element array * 2
+
+    // const newAngka = angka.map(function(a){
+    //   return a * 2
+    // });
+    // console.log(newAngka);
+
+    // map dengan arrow function
+    // const newAngka = angka.map(a => a * 2);
+    // console.log(newAngka);
+
+
+    // reduce untuk melakukan sesuatu element pada arraynya
+
+    // currentValue = misal element array mana yang sedang di loopingnya
+    // accumulator hasil dari currentValuenya
+    
+    // misal 1 dan 2 adalah currentValuenya
+    // hasil 1+2 adalah accumulatornya
+    
+    // default = angka.reduce((accumulator,currentValue) 0+1+2
+    // more parameter = angka.reduce((accumulator,currentValue,5) 5+1+2
+    // const newAngka = angka.reduce(function(accumulator, currentValue){
+    //   return accumulator + currentValue
+    // })
+
+    // console.log(newAngka);
+
+    // reduce dengan arrow function
+    // const newAngka = angka.reduce((accumulator,currentValue)=> accumulator + currentValue)
+    // console.log(newAngka);
+
+
+    // method chainning / berantai
+    // menggabungkan fungsi fungsi higher order function dalam satu kali eksekusi
+
+    // cari angka > 5
+    // kalikan 3
+    // jumlahkan
+
+    const newAngka = angka.filter(a => a > 5) //8,9,9
+      .map(a => a * 3) //24,27,27
+      .reduce((accumulator,currentValue)=> accumulator+currentValue) //24 + 27 + 27 =78
+
+    console.log(newAngka);
+  </script>
+</body>
+</html>

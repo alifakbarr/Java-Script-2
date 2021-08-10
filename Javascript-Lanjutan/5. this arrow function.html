@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this in arrow Function</title>
+</head>
+<body>
+  <script>
+    // contructor function
+    // const Mahasiswa = function(){
+    //   this.nama='bro';
+    //   this.waktu='siang';
+    //   this.hello=function(){
+    //      console.log(`Hello ${this.nama}, selamat ${this.waktu}`);
+    //   }
+    // }
+    
+    // const bro = new Mahasiswa();
+
+    // tidak semua bisa di jadikan arrow function salah satunya contructor function
+    // tapi kalau method bisa
+    // arrow function tidak mengenal this
+    // const Mahasiswa = function(){
+    //   this.nama='bro';
+    //   this.waktu='siang';
+    //   this.hello=()=>{
+    //      console.log(`Hello ${this.nama}, selamat ${this.waktu}`);
+    //   }
+    // }
+    
+    // const bro = new Mahasiswa();
+
+    const Mahasiswa = function(){
+      this.nama='bro'
+      this.umur='11'
+      this.hello=()=>{
+        console.log(`hai ${this.nama}`);
+      }
+
+      setInterval(()=>{
+        console.log(`${this.umur++}`);
+      },500)
+    }
+
+    const bro = new Mahasiswa();
+  </script>
+</body>
+</html>
