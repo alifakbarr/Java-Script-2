@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Filter, Map, Reduce</title>
+</head>
+<body>
+  <h3>My Videos</h3>
+  <ul>
+    <li data-duration="15:27">Teknik Podomoro</li>
+    <li data-duration="25:27">javascript - 1</li>
+    <li data-duration="16:25">javascript - 2</li>
+    <li data-duration="10:27">javascript - 3</li>
+    <li data-duration="20:00">javascript - 4</li>
+    <li data-duration="44:27">javascript - 5</li>
+    <li data-duration="12:27">website penipu</li>
+  </ul>
+
+  <h3>My Playlist</h3>
+  <ol>
+    <li>
+      <h4>Javascript</h4>
+      <p>Jumlah Video : <span class="jumlah-video"></span></p>
+      <p>Total durasi : <span class="total-durasi"></span></p>
+    </li>
+  </ol>
+
+  <script>
+    // ambil element video
+    const videos = Array.from(document.querySelectorAll('[data-duration]'));
+    // pilih hanya yang 'javascript'
+    let js = videos.filter(video => video.textContent.includes('javascript'))
+    // ambil durasi masing2 video
+    .map(item => item.dataset.duration)
+    // ubah durasi menjadi float, ubah menit ke detik
+    .map(waktu =>{
+      // 10:30 ->[10,30] di split
+      const parts = waktu.split(':').map(part=>parseFloat(part));
+      return ((parts[0]*60) + parts[1]);
+    })
+    // jumlahkan semua detik
+    .reduce((total,detik)=>total + detik);
+    // ubah formatnya jadi jam menit detik
+    const jam = Math.floor(js/3600);
+    js= js-jam *3600;
+    const menit = Math.floor(js/60);
+    const detik = js - menit * 60;
+    // simpan di DOM
+    const pDurasi = document.querySelector('.total-durasi');
+    pDurasi.textContent = `${jam} jam, ${menit} menit, ${detik} detik`;
+    const jmlVideo = videos.filter(video => video.textContent.includes('javascript')).length
+    const pJmlVideo = document.querySelector('.jumlah-video');
+    pJmlVideo.textContent = `${jmlVideo} Video`
+    console.log(js);
+  </script>
+</body>
+</html>
