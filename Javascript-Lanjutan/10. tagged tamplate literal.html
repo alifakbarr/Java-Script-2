@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagged Tamplate literal</title>
+</head>
+<body>
+  <script>
+    const mhs ={
+      nama:'bob',
+      umur:19,
+    }
+
+    // rest parameter
+    // ...sembarang
+    // untuk memasukkan jumlah parameter yang tidak di ketahui
+    function coba (string,...values){
+      return string.reduce((result,str,i)=> `${result}${str}${values[i]|| ''}`,'')
+    }
+    const str = coba `saya ${mhs.nama} dan berumur ${mhs.umur}`;
+
+    document.body.innerHTML=str
+  </script>
+</body>
+</html>
