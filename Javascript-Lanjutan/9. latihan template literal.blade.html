@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>latihan templyae literal</title>
+</head>
+<body>
+  <script>
+    // 1.normal
+    // const mhs = {
+    //   nama:'Jojo',
+    //   umur:'20'
+    // }
+
+    // const el =`<ul>
+    //   <li>${mhs.nama}</li>
+    //   <li>${mhs.umur}</li>
+    //   </ul>`;
+
+    // 2.loop
+    // const mhs=[
+    //   {
+    //     nama:'Jojo',
+    //     umur:'20'
+    //   },
+    //   {
+    //     nama:'lulu',
+    //     umur:'19',
+    //   },
+    // ];
+
+    // const el =`<div>
+    //   ${mhs.map(c=>
+    //     `<ul>
+    //     <li>${c.nama}</li>
+    //     <li>${c.umur}</li>
+    //   </ul>`
+    //   ).join('')}
+    //   </div>`;
+      
+    // 3.pengkondisian
+    //   const mhs = {
+    //   nama:'Jojo',
+    //   umur:'20',
+    //   // alamat:'konoha'
+    // }
+    // const el = 
+    // `${mhs.alamat? `${mhs.alamat}` : `Tidak ada`}`
+
+    // 4.nested
+    // html fragment
+    const mhs = {
+      nama:'Jojo',
+      umur:'20',
+      matkul:[
+        'rpl',
+        'ai',
+        'tkj'
+      ]
+    }
+
+    function cetakMatkul(matkul){
+      return `
+      <ol>
+        ${matkul.map(m =>`<li>${m}</li>`).join('')}
+      </ol>`
+    }
+    const el=
+    `
+      <h1>Data Mahasiswa</h1>
+      <p>${mhs.nama}</p>
+      <p>${mhs.umur}</p>
+      <p>${cetakMatkul(mhs.matkul)}</p>
+    `
+    document.body.innerHTML=el
+  </script>
+</body>
+</html>
