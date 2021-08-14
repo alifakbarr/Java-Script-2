@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destructuring Assigment</title>
+</head>
+<body>
+  <script>
+    // Destructuring Assigment = expression pada javascript yang membuat kita dapat membongkar nilai dari array
+    // atau properti dari object ke dalam variable yang terpisah
+
+    // destructuring variable / assignment
+    
+    // destructuring array
+    // const perkenalan = ['halo','ayam','bobi']
+    // const [salam,hewan,nama] = perkenalan
+
+    // console.log(salam);
+    // console.log(nama);
+
+    // skipping items
+    // const perkenalan = ['halo','ayam','bobi']
+
+    // const [salam,,nama] = perkenalan
+    // console.log(nama);
+
+    // swap items
+    // let a = 1
+    // let b = 2
+    // console.log(a);
+    // console.log(b);
+    // [a,b] = [b,a]
+    // console.log(a);
+    // console.log(b);
+
+    // return value pada function
+    // function coba(){
+    //   return [1,2]
+    // }
+
+    // let [a,b] = coba()
+    // console.log(b);
+
+    // rest parameter
+    // const [a,...value] = [1,2,3,4,5]
+    // console.log(a);
+    // console.log(value);
+
+    // destructuring object
+    // const mhs = {
+    //   nama:'bobi',
+    //   umur:19
+    // }
+
+    // const {nama, umur} = mhs
+    // console.log(umur);
+
+    // assigment tanpa deklarasi object
+    // ({nama, umur}={
+    //   nama:'bobi',
+    //   umur: 19
+    // })
+
+    // console.log(umur);
+
+    // assigntment ke variable yang baru
+    //   const mhs = {
+    //   nama:'bobi',
+    //   umur:19
+    // }
+
+    // const {nama:n,umur:u}=mhs
+    // console.log(n)
+    // console.log(u)
+
+    // memberikan default value
+    // const mhs = {
+    //   nama:'bobi',
+    //   umur:19,
+    //   email:'bobi@email'
+    // }
+
+    // const {nama:n,umur:u,email:e = 'default@email'} = mhs
+    // console.log(e);
+
+    // mengambil field pada object, setelah dikirim sebagai parameter untuk function
+    const mhs={
+      id:123,
+      nama:'bobi',
+      umur:19
+    }
+
+// maksud dari {id} object apau yang dikirm yang diambil akan idnya saja
+    getIdMhs =({id})=>{
+      return id
+    }
+
+    console.log(getIdMhs(mhs));
+  </script>
+</body>
+</html>
