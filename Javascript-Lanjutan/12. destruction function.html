@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destruction function</title>
+</head>
+<body>
+  <script>
+    // destructioning return value
+    function kalkulasi(a,b){
+      return {
+        tambah:a+b,
+        kurang:a-b,
+        kali:a*b,
+        bagi:a/b,
+      }
+    }
+
+    const {tambah,kurang,kali,bagi} = kalkulasi(4,3)
+    console.log(tambah);
+
+    // destructioning argumen
+    const mhs1={
+      nama:'bobi',
+      umur:19,
+      nilai:{
+        uts:90,
+        uas:80
+      }
+
+    }
+
+    function cetakMhs({nama,umur,nilai:{uts,uas}}){
+      return `Nama saya ${nama}, umur ${umur} tahun, nilai uas saya ${uas}`
+    }
+
+    console.log(cetakMhs(mhs1));
+  </script>
+</body>
+</html>
