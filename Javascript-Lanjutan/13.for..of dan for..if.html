@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For..of & For..in</title>
+</head>
+<body>
+
+  <ul>
+    <li class="nama">jojo</li>
+    <li class="nama">bobi</li>
+    <li class="nama">sisi</li>
+  </ul>
+  <script>
+    // for..of
+    // sebuah looping/mengulang object objec iterable
+    // object iterable = string,array,arguments.NodeList,typedArray,Map,set,User-defined iterables
+
+    const mhs = ['jojo','bobi','sisi'];
+
+    // // menggunakan forEach
+    // // hanya menampilkan isi dalam array
+    // mhs.forEach(m => console.log(m))
+
+    // // menampilkan index pada array
+    // mhs.forEach((m,i) => console.log(i))
+
+    // mhs.forEach((m,i) => console.log(`${m} mempunyai mahasiswa ke-${i}`))
+
+    // Array
+    // for of tidak bisa menampilkan index
+    // for(m of mhs){
+    //   console.log(m);
+    // }
+
+    // mengakali
+    // for([i,m] of mhs.entries()){
+    //   console.log(`${m} mempunyai mahasiswa ke-${i}`)
+    // }
+
+    // string
+    // const nama = 'jojo'
+    // for(n of nama){
+    //   console.log(n)
+    // }
+    
+    // nodeList
+    // const liNama = document.querySelectorAll('.nama');
+
+    // for(n of liNama){
+    //   console.log(n.innerHTML)
+    // }
+
+    // arguments
+    // function jumlahAngka(){
+    //   let jumlah = 0;
+    //   for (a of arguments) {
+    //     jumlah += a
+    //   }
+    //   return jumlah
+    // }
+
+    // console.log(jumlahAngka(1,2,3,4,5));
+
+    // for..in
+    // looping yang digunakan  hanya untuk enurable(property pada objek)
+
+    const mhs1 ={
+      nama:'jojo',
+      umur:19,
+    }
+
+    // menampilkan property saja
+    for (const n in mhs1) {
+      console.log(n);
+    }
+  </script>
+</body>
+</html>
