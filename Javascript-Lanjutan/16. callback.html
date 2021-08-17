@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    // callbacks
+    // function yang dikirimkan sebagai parameter pada fucntion yang lain
+
+    // Syncronous callback
+    // function halo(nama){
+    //   alert(`Halo, ${nama}`)
+    // }
+
+    // function tampilkanNama(callback){
+    //   const nama = prompt('Masukkan nama');
+    //   callback(nama)
+    // }
+
+    // console.log(tampilkanNama(halo));
+
+    // Asyncronous callback
+
+    // // vanilla javascript
+    // function getDataMahasiswa(url,success,error){
+    //   // membuat ajax
+    //   let xhr = new XMLHttpRequest();
+
+    //   // ketika state nya sudah siap jalankan function ini
+    //   xhr.onreadystatechange = function(){
+    //     // 4 = sudah siap
+    //     if(xhr.readyState === 4){
+    //       // 200 page ditemukan dalam kasus ini mahasiswa.json
+    //       if(xhr.status === 200){
+    //         // jalankan function callback succses
+    //         success(xhr.response)
+    //         // 404 page not found
+    //       }else if(xhr.status === 404){
+    //         error()
+    //       }
+    //     }
+    //   }
+
+    //   // jalankan ajaxnya
+    //   xhr.open('get',url)
+    //   xhr.send()
+    // }
+
+    // console.log('mulai');
+    // getDataMahasiswa('data/mahasiswa.json',
+    //   results=>{
+    //     // success
+    //     // ubah jadi object
+    //     const mhs = JSON.parse(results)
+    //     mhs.forEach(m => {
+    //       console.log(m.nama);
+    //     });
+    //   },
+    //   ()=>{
+
+    //   }
+    // )
+    // console.log('finish');
+
+    // Asyncronous with jquery
+    console.log('mulai');
+    $.ajax({
+      url:'data/mahasiswa.json',
+      success: (mhs)=>{
+        mhs.forEach(m => {
+          console.log(m.nama);
+        });
+      },
+      error:(e)=>{
+        console.log(e.responseText);
+      }
+    })
+    console.log('finish');
+
+
+  </script>
+</body>
+</html>
