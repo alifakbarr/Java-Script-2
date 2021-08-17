@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spread Operator</title>
+</head>
+<style>
+  .nama{
+    text-align: center;
+  }
+
+  .nama span{
+    display: inline-block;
+    transition: .3s;
+  }
+
+  .nama span:hover{
+    transform: scale(2);
+  }
+</style>
+<body>
+  <!-- <ul>
+    <li>zoro</li>
+    <li>jojo</li>
+    <li>boba</li>
+  </ul> -->
+
+  <h1 class="nama">Boba</h1>
+  <script>
+    // spread operator
+    // memecah (expand/unpack) iterables menjadi single Element
+
+    // menampilkan 
+    // const mhs=['jojo','bobi','sisi'];
+    // console.log(...mhs);
+
+
+    // penggunaan spread operator
+    // menggabungkan 2 array
+
+    // const mhs=['jojo','bobi','sisi'];
+    // const mhs1=['boba','joji','susi'];
+    // const orang = [...mhs,...mhs1]
+    // const orang2 = [...mhs,'aji',...mhs1]
+    // console.log(orang2);
+
+    // mengcopy array
+    // cara ini salah karena 
+    // const mhs=['jojo','bobi','sisi'];
+    // const mhs1 =mhs;
+    // // ketika mhs1[0 ]diganti dengan zoro maka mhs[0] juga
+    // mhs1[0]='zoro';
+    // console.log(mhs);
+
+    // cara benar
+    // mhs tidak terpengaruh
+    // const mhs=['jojo','bobi','sisi'];
+    // console.log(mhs);
+    // const mhs1=[...mhs];
+    // mhs1[0]='zoro';
+    // console.log(mhs1);
+
+    // memasukkan li ke array
+    // const liNama = document.querySelectorAll('li');
+    // // awalnya liNama adalah node list kita rubah menjadi array dengan [...liNama]
+    // const huruf = [...liNama].map(h =>h.textContent)
+    // console.log(huruf);
+
+    const nama = document.querySelector('.nama')
+    const huruf = [...nama.textContent].map(h=>`<span>${h}</span>`).join('')
+    nama.innerHTML=huruf;
+  </script>
+</body>
+</html>
