@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rest Parameter</title>
+</head>
+<body>
+  <script>
+    // rest parameter
+    // memperesentaskan argument pada function dengan  jumlah tidak terbatas menjadi sebuah array
+
+  // menjumlahkan 
+  // function jumlahkan(...angka){
+  //   return angka.reduce((a,b)=> a+b)
+  // }
+
+  // console.log(jumlahkan(1,2,3,4,5));
+
+  // array destructuring
+  // const kel1=['jojo','boba','sisi','bobi']
+
+  // const [ketua,wakil,...anggota]=kel1
+  // console.log(anggota);
+
+  // object destructuring
+  // const team = {
+  //   pm:'jojo',
+  //   frontend:'boba',
+  //   backend:'sisi',
+  //   ui:'bobi'
+  // }
+
+  // const {pm,...myTeam}=team;
+  // console.log(pm);
+
+  // filtering
+  function filterBy(type,...values){
+    return values.filter(v => typeof v === type)
+  }
+
+  console.log(filterBy('number',1,3,'sanz',false,true,'jojo'));
+  </script>
+</body>
+</html>
