@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise / janji</title>
+</head>
+<body>
+  <script>
+    // Promise / janji
+    // object yang mempresentasikan keberhasilan / kegagalan sebuah event yang asynchronous di masa depan
+
+    // janji(terpenuhi / ingkar)
+    // jika di javascript janji ini diesbut state keadaannya
+    
+    // keadaan
+    // states (fulfilled / rejected / pending)
+    // fulfilled = terpenuhi
+    // rejected = tidak terpenuhi
+    // pending = waktu tunggu menepati janji
+
+    // callback (resolve / rejected / finally) dibuat saat janji terpenuhi
+    // finally = ketika waktu tunggu selesai ngapain
+    // resolve = ketika berhasil ngapain
+    // rejected = ketika gagal ngapain
+
+    // didalam promise ini ada aksi yang kita lakukan saat janji terpenuhi / tidak terpenuhi
+    // aksi (then / catch)
+    // then kalau terpenuhi, akan menjalankan resolve
+    // catch tidak terpenuhi, akan menjalankan rejected
+
+    // // contoh 1
+    // let ditepati = true
+    // // membuat objek khusus Promise()
+    // const janji1 = new Promise((resolve,reject)=>{
+    //   if(ditepati){
+    //     resolve('Janji ditepati')
+    //   }else{
+    //     reject('janji tidak ditepati')
+    //   }
+    // })
+
+    // // menjalankan secara langsung
+    // console.log(janji1);
+
+    // // menjalankan dan menangkap then dan catch
+    // janji1
+    //   .then(result => console.log('OK! : ' + result))
+    //   .catch(result => console.log('NOT OK : ' + result))
+
+    // // contoh 2 dengan waktu
+    // let ditepati = true
+    // const janji2 = new Promise((resolve,reject) =>{
+    //   if(ditepati){
+    //     setTimeout(()=>{
+    //       resolve('ditepati setelah beberapa waktu')
+    //     }, 2000)
+    //   }else{
+    //     setTimeout(()=>{
+    //       reject('tidak ditepati setelah beberapa waktu')
+    //     },2000)
+    //   }
+    // })
+
+    // console.log(`mulai`);
+    // // janji2 = saat dijalankan
+    // // .then(() => console.log(janji2)) = melihat hasil
+    // // console.log(janji2.then(() => console.log(janji2))); melihat proses
+
+    // // tanpa melihat proses
+    // // finally di jalankan ketika then . catch sudah siap dijalankan
+    // janji2
+    //   .finally(()=> console.log('Selesai menunggu'))
+    //   .then(result => console.log('OK : '+result))
+    //   .catch(result => console.log('NOT OK : '+result))
+    // console.log(`selesai`);
+
+    // promise.all()
+    // digunakan ketika ingin menjalankan banyak promise sekaligus
+
+    const film = new Promise(resolve =>{
+      setTimeout(()=>{
+        resolve([{
+          judul:'avenger',
+          tahun:2021
+        }])
+      },1000)
+    })
+     
+  const cuaca = new Promise(resolve =>{
+    setTimeout(()=>{
+      resolve([{
+        city : 'Sidoarjo',
+        temp : 26
+      }])
+    },500)
+  })
+
+  // tampilkan
+  Promise.all([film,cuaca])
+    // .then(result => console.log(result)) 
+  // memecah Array
+  .then(result =>{
+    const [film,cuaca] = result
+    console.log(cuaca);
+    console.log(film);
+  })
+
+  </script>
+</body>
+</html>
