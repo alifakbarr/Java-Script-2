@@ -35,6 +35,9 @@
 //   })
 // })
 
+
+// fetch()
+// API pada javascript modern yang tugassnya mengabil data secara asyncronous / ajax 
 const searchButton = document.querySelector('.search-button');
 
 searchButton.addEventListener('click',function() {
