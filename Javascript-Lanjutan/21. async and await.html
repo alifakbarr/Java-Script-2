@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async and Await</title>
+</head>
+<body>
+  <script>
+    // Asyncronous function
+    // sebuah function yang bekerja secara asyncronous (melalui even loop),
+    // yang menghasilkan (implisit) promise sebagai
+    // return valuenya, tapi cara penulisan codenya menggunakan
+    // penulisan yang syncronous (standard)
+
+    // sebuah async function dapat memiliki keyword await di
+    // dalamnya untuk memberhentikan sementara eksekusi
+    // fungsinya sambil menunggu promisnya selesai
+
+    // const coba = new Promise((resolve) =>{
+    //   setTimeout(()=>{
+    //     resolve('selesai')
+    //   },2000)
+    // })
+
+    // // console.log(coba)
+    // coba
+    //   .then(()=> console.log('OK'))
+
+
+    function cobaPromise() {
+      return new Promise((resolve,reject) =>{
+        const waktu = 5000
+        if(waktu < 5000){
+          setTimeout(()=>{
+          resolve('terpenuhi')
+          },waktu)
+        }else{
+          reject('kelamaan')
+        }
+      })
+    }
+
+    // biasa
+    // const coba = cobaPromise()
+    // coba 
+    //   .then(()=> console.log(coba))
+    //   .catch(()=> console.log(coba))
+
+    // async = digunakan untuk menandakan bahwa didala tersebut terdapat async function
+    // await = untuk menandai mana yang async function
+    
+    // Async wait tidak bisa menggunakan then dan catch
+    // sebagai gantinya menngynakan try sebagai then, dan catch sebagai catch
+    async function cobaAsync(){
+      try{
+        const coba = await cobaPromise()
+        console.log(coba)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    console.log('mulai')
+    cobaAsync()
+    console.log('finish')
+
+   
+    </script>
+</body>
+</html>
